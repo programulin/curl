@@ -45,7 +45,8 @@ class Curl
     /** Автоматическое закрытие соединения */
     public function __destruct()
     {
-        curl_close($this->curl);
+        if($this->curl)
+            curl_close($this->curl);
     }
 
     /**
